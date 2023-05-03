@@ -38,11 +38,9 @@ public class ConjuntoSt implements ConjuntoTDA {
 	}
 
 	@Override
-	public boolean pertenece(int x) { // Costo Lineal
+	public boolean pertenece(int x) { // Costo lineal
 		boolean pertenece = false;
-		int i = indice - 1;
-		while (!pertenece && i > 0) {
-			i--;
+		for (int i = 0; i < indice; i++) {
 			if (arr[i] == x) {
 				pertenece = true;
 			}

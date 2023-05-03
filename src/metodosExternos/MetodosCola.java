@@ -168,4 +168,23 @@ public class MetodosCola {
 		
 	}
 	
+	public static ConjuntoTDA conjuntoRepetidos(ColaTDA cola) {
+		ConjuntoTDA noRepetidos = new ConjuntoSt();
+		ConjuntoTDA repetidos = new ConjuntoSt();
+		noRepetidos.inicializarConjunto();
+		repetidos.inicializarConjunto();
+		
+		while (!cola.colaVacia()) {
+			if (noRepetidos.pertenece(cola.primero())) {
+				repetidos.agregar(cola.primero());
+			} else {
+				noRepetidos.agregar(cola.primero());
+			}
+			cola.desacolar();
+		}
+		
+		return repetidos;
+		
+	}
+	
 }

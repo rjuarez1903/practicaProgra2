@@ -34,10 +34,11 @@ public class Main {
 		cola1.acolar(0);
 		cola1.acolar(4);
 		cola1.acolar(6);
-		cola1.acolar(8);
+		cola1.acolar(0);
 		cola1.acolar(6);
 		cola1.acolar(8);
 		cola1.acolar(7);
+		cola1.acolar(10);
 		cola1.acolar(10);
 		
 		cola2.acolar(8);
@@ -45,12 +46,20 @@ public class Main {
 		cola2.acolar(4);
 		cola2.acolar(0);
 		
-		ColaTDA[] mitades = MetodosCola.dividirEnMitades(cola1);
-		ColaTDA mitad1 = mitades[0];
-		ColaTDA mitad2 = mitades[1];
+//		ColaTDA[] mitades = MetodosCola.dividirEnMitades(cola1);
+//		ColaTDA mitad1 = mitades[0];
+//		ColaTDA mitad2 = mitades[1];
 		
-		MetodosCola.imprimirCola(mitad1);
-		MetodosCola.imprimirCola(mitad2);
+//		MetodosCola.imprimirCola(mitad1);
+//		MetodosCola.imprimirCola(mitad2);
+		
+		ConjuntoTDA repetidos = MetodosCola.conjuntoRepetidos(cola1);
+		while (!repetidos.conjuntoVacio()) {
+			int valor = repetidos.elegir();
+			System.out.println(valor);
+			repetidos.sacar(valor);
+		}
+		
 	}
 	
 	
