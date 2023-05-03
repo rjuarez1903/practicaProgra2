@@ -137,5 +137,35 @@ public class MetodosCola {
 		}
 	}
 	
+	public static ColaTDA[] dividirEnMitades(ColaTDA cola) {
+		ColaTDA m1 = new ColaSt();
+		ColaTDA m2 = new ColaSt();
+		ColaTDA copia = new ColaSt();
+		m1.inicializarCola();
+		m2.inicializarCola();
+		copia.inicializarCola();
+		int largoCola = 1;
+		
+		while (!cola.colaVacia()) {
+			largoCola++;
+			copia.acolar(cola.primero());
+			cola.desacolar();
+		}
+		
+		for (int i = 0; i < largoCola/2; i++) {
+			m1.acolar(copia.primero());
+			copia.desacolar();
+		}
+		
+		for (int i = 0; i < largoCola/2; i++) {
+			m2.acolar(copia.primero());
+			copia.desacolar();
+		}
+		
+		ColaTDA[] mitades = {m1, m2};
+		
+		return mitades;
+		
+	}
 	
 }

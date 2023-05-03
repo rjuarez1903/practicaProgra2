@@ -45,10 +45,12 @@ public class Main {
 		cola2.acolar(4);
 		cola2.acolar(0);
 		
-		MetodosCola.eliminarRepetidos(cola1);
+		ColaTDA[] mitades = MetodosCola.dividirEnMitades(cola1);
+		ColaTDA mitad1 = mitades[0];
+		ColaTDA mitad2 = mitades[1];
 		
-		MetodosCola.imprimirCola(cola1);
-		
+		MetodosCola.imprimirCola(mitad1);
+		MetodosCola.imprimirCola(mitad2);
 	}
 	
 	
