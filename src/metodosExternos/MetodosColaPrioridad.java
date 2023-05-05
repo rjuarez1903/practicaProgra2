@@ -34,4 +34,17 @@ public class MetodosColaPrioridad {
 		
 	}
 	
+	public static DiccionarioMultipleTDA colaPrioridadADicMulti(ColaPrioridadTDA colaPrioridad) {
+		DiccionarioMultipleTDA dicMultiple = new DiccionarioMultipleSt();
+		dicMultiple.inicializarDiccionario();
+		while (!colaPrioridad.colaVacia()) {
+			int valor = colaPrioridad.primero();
+			int prioridad = colaPrioridad.prioridad();
+			dicMultiple.agregar(valor, prioridad);
+			colaPrioridad.desacolar();
+		}
+		
+		return dicMultiple;
+	}
+	
 }

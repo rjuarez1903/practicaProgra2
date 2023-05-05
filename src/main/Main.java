@@ -23,9 +23,9 @@ public class Main {
 //		pila1.apilar(4);
 //		pila1.apilar(5);
 //		pila1.apilar(4);	
-		
+//		
 //		Cola
-		
+//		
 //		ColaTDA cola1 = new ColaSt();
 //		ColaTDA cola2 = new ColaSt();
 //		cola1.inicializarCola();
@@ -45,9 +45,9 @@ public class Main {
 //		cola2.acolar(6);
 //		cola2.acolar(4);
 //		cola2.acolar(0);
-		
+//		
 //		Cola Prioridad
-		
+//		
 //		ColaPrioridadTDA colaPrioridad1 = new ColaPrioridadSt();
 //		ColaPrioridadTDA colaPrioridad2 = new ColaPrioridadSt();
 //		
@@ -57,7 +57,10 @@ public class Main {
 //		colaPrioridad1.acolarPrioridad(2, 10);
 //		colaPrioridad1.acolarPrioridad(5, 5);
 //		colaPrioridad1.acolarPrioridad(1, 15);
+//		colaPrioridad1.acolarPrioridad(1, 12);
 //		colaPrioridad1.acolarPrioridad(7, 3);
+//		colaPrioridad1.acolarPrioridad(7, 8);
+//		colaPrioridad1.acolarPrioridad(1, 3);
 //		colaPrioridad1.acolarPrioridad(3, 8);
 //		
 //		colaPrioridad2.acolarPrioridad(20, 5);
@@ -66,26 +69,22 @@ public class Main {
 //		colaPrioridad2.acolarPrioridad(3, 7);
 //		colaPrioridad2.acolarPrioridad(8, 4);
 //		
-//		ColaPrioridadTDA combinadas = MetodosColaPrioridad.combinarColas(colaPrioridad1, colaPrioridad2);
-//		MetodosColaPrioridad.imprimirColaPrioridad(combinadas);
-		
+//		
 //		Conjunto
-		
-		ConjuntoTDA conjunto = new ConjuntoSt();
-		ConjuntoTDA conjunto2 = new ConjuntoSt();
-		conjunto.inicializarConjunto();
-		conjunto2.inicializarConjunto();
-		
-		conjunto.agregar(1);
-		conjunto.agregar(2);
-		conjunto.agregar(3);
-
-		conjunto2.agregar(2);
-		conjunto2.agregar(3);
-		conjunto2.agregar(4);
-		
-		ConjuntoTDA diferenciaSimetrica = MetodosConjunto.diferenciaSimetrica(conjunto, conjunto2);
-		MetodosConjunto.imprimirConjunto(diferenciaSimetrica);
+//		
+//		ConjuntoTDA conjunto = new ConjuntoSt();
+//		ConjuntoTDA conjunto2 = new ConjuntoSt();
+//		conjunto.inicializarConjunto();
+//		conjunto2.inicializarConjunto();
+//		
+//		conjunto.agregar(1);
+//		conjunto.agregar(2);
+//		conjunto.agregar(3);
+//
+//		conjunto2.agregar(2);
+//		conjunto2.agregar(3);
+//		conjunto2.agregar(4);
+//		
 		
 	}
 
