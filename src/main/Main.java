@@ -72,14 +72,25 @@ public class Main {
 //		Conjunto
 		
 		ConjuntoTDA conjunto = new ConjuntoSt();
+		ConjuntoTDA conjunto2 = new ConjuntoSt();
 		conjunto.inicializarConjunto();
+		conjunto2.inicializarConjunto();
+		
 		conjunto.agregar(0);
 		conjunto.agregar(1);
 		conjunto.agregar(2);
 		conjunto.agregar(3);
 		conjunto.agregar(4);
 		
-		MetodosConjunto.imprimirConjunto(conjunto);
+		conjunto2.agregar(10);
+		conjunto2.agregar(9);
+		conjunto2.agregar(4);
+		conjunto2.agregar(0);
+		conjunto2.agregar(-1);
+		conjunto2.agregar(1);
+		
+		ConjuntoTDA diferencia = MetodosConjunto.diferencia(conjunto, conjunto2);
+		MetodosConjunto.imprimirConjunto(diferencia);
 		
 	}
 	
