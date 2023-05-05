@@ -49,7 +49,7 @@ public class MetodosDiccionarioMultiple {
 		return diccionarioMultiple; 
 	}
 	
-	public static DiccionarioMultipleTDA clavesDicMulti2(DiccionarioMultipleTDA dicMulti, DiccionarioMultipleTDA dicMulti2) {
+	public static DiccionarioMultipleTDA clavesDicMulti4(DiccionarioMultipleTDA dicMulti, DiccionarioMultipleTDA dicMulti2) {
 		DiccionarioMultipleTDA diccionarioMultiple = new DiccionarioMultipleSt();
 		diccionarioMultiple.inicializarDiccionario();
 		ConjuntoTDA claves1 = dicMulti.claves();
@@ -60,7 +60,7 @@ public class MetodosDiccionarioMultiple {
 		while (!claves.conjuntoVacio()) {
 			int clave = claves.elegir();
 			ConjuntoTDA valores1 = dicMulti.recuperar(clave);
-			ConjuntoTDA valores2 = dicMulti.recuperar(clave);
+			ConjuntoTDA valores2 = dicMulti2.recuperar(clave);
 			
 			while (!valores1.conjuntoVacio()) {
 				int valor = valores1.elegir();
@@ -77,8 +77,23 @@ public class MetodosDiccionarioMultiple {
 			claves.sacar(clave);
 		}
 		
-		System.out.println("Llegamos");
 		return diccionarioMultiple;
+	}
+	
+	
+	
+	public static DiccionarioMultipleTDA diccionarioSinonimos(DiccionarioSimple diccionario) {
+		DiccionarioMultipleTDA ds = new DiccionarioMultipleSt();
+		ds.inicializarDiccionario();
+		ConjuntoTDA claves = diccionario.claves();
+		
+		while (!claves.conjuntoVacio()) {
+			int clave = claves.elegir();
+			int valor = diccionario.recuperar(clave);
+			ds.agregar(valor, clave);
+			claves.sacar(clave);
+		}
+		return ds;
 	}
 	
 }
