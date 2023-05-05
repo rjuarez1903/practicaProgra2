@@ -48,28 +48,38 @@ public class Main {
 		
 //		Cola Prioridad
 		
-		ColaPrioridadTDA colaPrioridad1 = new ColaPrioridadSt();
-		ColaPrioridadTDA colaPrioridad2 = new ColaPrioridadSt();
+//		ColaPrioridadTDA colaPrioridad1 = new ColaPrioridadSt();
+//		ColaPrioridadTDA colaPrioridad2 = new ColaPrioridadSt();
+//		
+//		colaPrioridad1.inicializarColaPrioridad();
+//		colaPrioridad2.inicializarColaPrioridad();
+//		
+//		colaPrioridad1.acolarPrioridad(2, 10);
+//		colaPrioridad1.acolarPrioridad(5, 5);
+//		colaPrioridad1.acolarPrioridad(1, 15);
+//		colaPrioridad1.acolarPrioridad(7, 3);
+//		colaPrioridad1.acolarPrioridad(3, 8);
+//		
+//		colaPrioridad2.acolarPrioridad(20, 5);
+//		colaPrioridad2.acolarPrioridad(7, 3);
+//		colaPrioridad2.acolarPrioridad(10, 1);
+//		colaPrioridad2.acolarPrioridad(3, 7);
+//		colaPrioridad2.acolarPrioridad(8, 4);
+//		
+//		ColaPrioridadTDA combinadas = MetodosColaPrioridad.combinarColas(colaPrioridad1, colaPrioridad2);
+//		MetodosColaPrioridad.imprimirColaPrioridad(combinadas);
 		
-		colaPrioridad1.inicializarColaPrioridad();
-		colaPrioridad2.inicializarColaPrioridad();
+//		Conjunto
 		
-		colaPrioridad1.acolarPrioridad(2, 10);
-		colaPrioridad1.acolarPrioridad(5, 5);
-		colaPrioridad1.acolarPrioridad(1, 15);
-		colaPrioridad1.acolarPrioridad(7, 3);
-		colaPrioridad1.acolarPrioridad(3, 8);
+		ConjuntoTDA conjunto = new ConjuntoSt();
+		conjunto.inicializarConjunto();
+		conjunto.agregar(0);
+		conjunto.agregar(1);
+		conjunto.agregar(2);
+		conjunto.agregar(3);
+		conjunto.agregar(4);
 		
-		colaPrioridad2.acolarPrioridad(20, 5);
-		colaPrioridad2.acolarPrioridad(7, 3);
-		colaPrioridad2.acolarPrioridad(10, 1);
-		colaPrioridad2.acolarPrioridad(3, 7);
-		colaPrioridad2.acolarPrioridad(8, 4);
-		
-		ColaPrioridadTDA combinadas = MetodosColaPrioridad.combinarColas(colaPrioridad1, colaPrioridad2);
-		MetodosColaPrioridad.imprimirColaPrioridad(combinadas);
-		
-		
+		MetodosConjunto.imprimirConjunto(conjunto);
 		
 	}
 	
