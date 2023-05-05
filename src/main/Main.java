@@ -2,6 +2,9 @@ package main;
 
 import tda.*;
 import metodosExternos.*;
+
+import java.util.Random;
+
 import impl.*;
 
 public class Main {
@@ -85,6 +88,35 @@ public class Main {
 //		conjunto2.agregar(3);
 //		conjunto2.agregar(4);
 //		
+		
+		DiccionarioMultipleTDA d1 = new DiccionarioMultipleSt();
+		DiccionarioMultipleTDA d2 = new DiccionarioMultipleSt();
+		d1.inicializarDiccionario();
+		d2.inicializarDiccionario();
+		
+		Random random = new Random();
+
+        // Agrega 3 claves con 2 valores aleatorios cada una al diccionario 1
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 2; j++) {
+                d1.agregar(i, random.nextInt(100));
+            }
+        }
+
+        // Agrega 3 claves con 2 valores aleatorios cada una al diccionario 2
+        for (int i = 2; i <= 4; i++) {
+            for (int j = 1; j <= 2; j++) {
+                d2.agregar(i, random.nextInt(100));
+            }
+        }
+        
+        
+//      MetodosDiccionarioMultiple.imprimirDiccionarioMuliple(d1);
+//      MetodosDiccionarioMultiple.imprimirDiccionarioMuliple(d2);
+        DiccionarioMultipleTDA dicMulti = MetodosDiccionarioMultiple.clavesDicMulti2(d1, d2);
+        MetodosDiccionarioMultiple.imprimirDiccionarioMuliple(dicMulti);
+        
+        
 		
 	}
 
