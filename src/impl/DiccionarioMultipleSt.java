@@ -73,7 +73,7 @@ public class DiccionarioMultipleSt implements DiccionarioMultipleTDA {
 	@Override
 	public void eliminarValor(int cla, int val) {
 		int posC = clave2Indice(cla);
-		if (posC != 1) {
+		if (posC != -1) {
 			Estructura e = elementos[posC];
 			int posV = valor2Indice(e, val);
 			if (posV != -1) {

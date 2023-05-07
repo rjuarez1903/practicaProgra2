@@ -3,14 +3,14 @@ package impl;
 import tda.ConjuntoTDA;
 
 public class ConjuntoSt implements ConjuntoTDA {
-	
-	private int[] arr;
-	private int indice;
 
+	int[] arr;
+	int indice;
+	
 	@Override
 	public void inicializarConjunto() {
 		arr = new int[100];
-		indice = 0;
+		indice++;
 	}
 
 	@Override
@@ -20,25 +20,31 @@ public class ConjuntoSt implements ConjuntoTDA {
 			indice++;
 		}
 	}
+
 	@Override
-	public int elegir() { // Costo Constante
+	public void sacar(int x) {
+		if (pertenece(x)) {
+			for (int i = indice -1; i >= 0; i--) {
+				if (arr[i] == x) {
+					indice--;
+				} 
+			}
+		}
+		
+	}
+
+	@Override
+	public int elegir() {
 		return arr[indice -1];
 	}
 
 	@Override
-	public void sacar(int x) { // Costo Lineal
-		int i = 0;
-		while (i < indice && arr[i] != x) {
-			i++;
-		}
-		if (i < indice) {
-			arr[i] = arr[indice - 1];
-			indice--;
-		}
+	public boolean conjuntoVacio() {
+		return indice == 0;
 	}
 
 	@Override
-	public boolean pertenece(int x) { // Costo lineal
+	public boolean pertenece(int x) {
 		boolean pertenece = false;
 		for (int i = 0; i < indice; i++) {
 			if (arr[i] == x) {
@@ -47,10 +53,5 @@ public class ConjuntoSt implements ConjuntoTDA {
 		}
 		return pertenece;
 	}
-
-	@Override
-	public boolean conjuntoVacio() { // Costo Constante
-		return indice == 0;
-	}
-
+	
 }
