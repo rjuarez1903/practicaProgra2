@@ -119,7 +119,7 @@ public class Main {
         diccionario.agregar(5, 3);
         diccionario.agregar(6, 2);
         diccionario.agregar(7, 1);
-        
+                
         DiccionarioMultipleTDA ds = MetodosDiccionarioMultiple.diccionarioSinonimos(diccionario);
         MetodosDiccionarioMultiple.imprimirDiccionarioMuliple(ds);
 	}

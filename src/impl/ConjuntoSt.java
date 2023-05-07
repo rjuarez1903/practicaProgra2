@@ -10,7 +10,7 @@ public class ConjuntoSt implements ConjuntoTDA {
 	@Override
 	public void inicializarConjunto() {
 		arr = new int[100];
-		indice++;
+		indice = 0;
 	}
 
 	@Override

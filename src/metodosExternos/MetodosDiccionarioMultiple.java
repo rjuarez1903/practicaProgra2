@@ -89,6 +89,7 @@ public class MetodosDiccionarioMultiple {
 		
 		while (!claves.conjuntoVacio()) {
 			int clave = claves.elegir();
+			System.out.println(clave);
 			int valor = diccionario.recuperar(clave);
 			ds.agregar(valor, clave);
 			claves.sacar(clave);
