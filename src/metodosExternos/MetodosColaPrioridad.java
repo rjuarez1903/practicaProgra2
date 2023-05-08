@@ -47,4 +47,16 @@ public class MetodosColaPrioridad {
 		return dicMultiple;
 	}
 	
+	public static ColaPrioridadTDA clavesOrdenadas(DiccionarioMultipleTDA dicMulti) {
+		ColaPrioridadTDA clavesOrdenadas = new ColaPrioridadSt();
+		clavesOrdenadas.inicializarColaPrioridad();
+		ConjuntoTDA claves = dicMulti.claves();
+		while (!claves.conjuntoVacio()) {
+			int valor = claves.elegir();
+			clavesOrdenadas.acolarPrioridad(valor, valor);
+			claves.sacar(valor);
+		}
+		return clavesOrdenadas;
+	}
+	
 }

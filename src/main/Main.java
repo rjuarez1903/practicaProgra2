@@ -110,18 +110,21 @@ public class Main {
             }
         }
         
-        DiccionarioSimple diccionario = new DiccionarioSimpleSt();
-        diccionario.inicializarDiccionario();
-        diccionario.agregar(1, 2);
-        diccionario.agregar(2, 3);
-        diccionario.agregar(3, 2);
-        diccionario.agregar(4, 1);
-        diccionario.agregar(5, 3);
-        diccionario.agregar(6, 2);
-        diccionario.agregar(7, 1);
+        ColaPrioridadTDA clavesOrdenadas = MetodosColaPrioridad.clavesOrdenadas(d1);
+        MetodosColaPrioridad.imprimirColaPrioridad(clavesOrdenadas);
+        
+//        DiccionarioSimple diccionario = new DiccionarioSimpleSt();
+//        diccionario.inicializarDiccionario();
+//        diccionario.agregar(1, 2);
+//        diccionario.agregar(2, 3);
+//        diccionario.agregar(3, 2);
+//        diccionario.agregar(4, 1);
+//        diccionario.agregar(5, 3);
+//        diccionario.agregar(6, 2);
+//        diccionario.agregar(7, 1);
                 
-        DiccionarioMultipleTDA ds = MetodosDiccionarioMultiple.diccionarioSinonimos(diccionario);
-        MetodosDiccionarioMultiple.imprimirDiccionarioMuliple(ds);
+//        DiccionarioMultipleTDA ds = MetodosDiccionarioMultiple.diccionarioSinonimos(diccionario);
+//        MetodosDiccionarioMultiple.imprimirDiccionarioMuliple(ds);
 	}
 
 }
