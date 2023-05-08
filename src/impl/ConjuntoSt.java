@@ -26,6 +26,7 @@ public class ConjuntoSt implements ConjuntoTDA {
 		if (pertenece(x)) {
 			for (int i = indice -1; i >= 0; i--) {
 				if (arr[i] == x) {
+					arr[i] = arr[indice - 1];
 					indice--;
 				} 
 			}
@@ -53,5 +54,5 @@ public class ConjuntoSt implements ConjuntoTDA {
 		}
 		return pertenece;
 	}
-	
+		
 }

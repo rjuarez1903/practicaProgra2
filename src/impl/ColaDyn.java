@@ -31,7 +31,7 @@ public class ColaDyn implements ColaTDA {
 		
 		//Si la cola estaba vacía
 		if (primero == null)
-			ultimo = null;
+			primero = ultimo;
 	}
 
 	@Override
