@@ -4,64 +4,63 @@ import tda.ConjuntoTDA;
 
 public class ConjuntoDyn implements ConjuntoTDA {
 	
-	public class Nodo {
-		public int info;
-		public Nodo sig;
+	private class Nodo {
+		int info;
+		Nodo sig;
 	}
 	
 	Nodo c;
 
 	@Override
-	public void inicializarConjunto() { 
-		c = null; 
+	public void inicializarConjunto() { // Costo lineal
+		c = null;
 
 	}
 
 	@Override
-	public void agregar(int x) {
-		// Verifica que x no esté en el conjunto
+	public void agregar(int x) { // Costo lineal
 		if (!this.pertenece(x)) {
-			Nodo aux = new Nodo();
-			aux.info = x;
-			aux.sig = c;
-			c = aux;
+			Nodo nuevo = new Nodo();
+			nuevo.info = x;
+			nuevo.sig = c;
+			c = nuevo;
 		}
-
 	}
 
 	@Override
-	public void sacar(int x) { 
-		if (c != null) { 
-			// Si es el primer elemento de la lista
-			if (c.info == x) { 
-				c = c.sig;   
+	public void sacar(int x) { // Costo lineal
+		if (c != null) {
+			if (c.info == x) {
+				c = c.sig;
+			} else {
+				Nodo aux = c;
+				while (aux.sig != null && aux.sig.info != x) {
+					aux = aux.sig;
+				} 
+				if (aux.sig != null) {
+					aux.sig = aux.sig.sig;
+				}
 			}
-		} else {
-			Nodo aux = c;  
-			while (aux.sig != null && aux.sig.info != x) 
-				aux = aux.sig; 
-			if (aux.sig != null) 
-				aux.sig = aux.sig.sig;
 		}
 	}
 
 	@Override
-	public int elegir() { 
-		return c.info; 
+	public int elegir() { // Costo constante
+		return c.info;
 	}
 
 	@Override
-	public boolean pertenece(int x) {
+	public boolean conjuntoVacio() { // Costo constante
+		return c == null;
+	}
+
+	@Override
+	public boolean pertenece(int x) { // Costo lineal
 		Nodo aux = c;
-		while ((aux.sig != null) && (aux.info != x)) {
+		while (aux != null && aux.info != x) {
 			aux = aux.sig;
 		}
 		return aux != null;
-	}
-
-	@Override
-	public boolean conjuntoVacio() {
-		return c == null;
 	}
 
 }
