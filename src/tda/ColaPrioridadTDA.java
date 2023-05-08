@@ -19,4 +19,7 @@ public interface ColaPrioridadTDA {
 	//cola inicializada
 	boolean colaVacia();
 	
+	//inicializada
+	int sumaPrioridades();
+	
 }

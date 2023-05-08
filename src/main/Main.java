@@ -110,8 +110,17 @@ public class Main {
             }
         }
         
-        ColaPrioridadTDA clavesOrdenadas = MetodosColaPrioridad.clavesOrdenadas(d1);
-        MetodosColaPrioridad.imprimirColaPrioridad(clavesOrdenadas);
+//        ColaPrioridadTDA clavesOrdenadas = MetodosColaPrioridad.clavesOrdenadas(d1);
+//        MetodosColaPrioridad.imprimirColaPrioridad(clavesOrdenadas);
+        
+        ColaPrioridadTDA colaPrioridad = new ColaPrioridadDyn();
+        colaPrioridad.inicializarColaPrioridad();
+        colaPrioridad.acolarPrioridad(0, 1);
+        colaPrioridad.acolarPrioridad(0, 2);
+        colaPrioridad.acolarPrioridad(0, 3);
+        colaPrioridad.desacolar();
+        System.out.println(colaPrioridad.prioridad());
+        System.out.println(colaPrioridad.sumaPrioridades());
         
 //        DiccionarioSimple diccionario = new DiccionarioSimpleSt();
 //        diccionario.inicializarDiccionario();

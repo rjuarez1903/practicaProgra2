@@ -11,13 +11,16 @@ public class ColaPrioridadDyn implements ColaPrioridadTDA {
 	}
 	
 	NodoPrioridad mayorPrioridad;
+	int suma;
 	
 	@Override
 	public void inicializarColaPrioridad() {
 		mayorPrioridad = null;
+		suma = 0;
 	}
 	@Override
 	public void acolarPrioridad(int valo, int prior) {
+		suma += prior;
 		// Creo el nuevo nodo que voy a acolar
 		NodoPrioridad nuevo = new NodoPrioridad();
 		nuevo.info = valo;
@@ -40,6 +43,7 @@ public class ColaPrioridadDyn implements ColaPrioridadTDA {
 	
 	@Override
 	public void desacolar() {
+		suma -= mayorPrioridad.prioridad;
 		mayorPrioridad = mayorPrioridad.sig;
 	}
 	
@@ -56,6 +60,10 @@ public class ColaPrioridadDyn implements ColaPrioridadTDA {
 	@Override
 	public int prioridad() {
 		return mayorPrioridad.prioridad;
+	}
+	@Override
+	public int sumaPrioridades() {
+		return suma;
 	} 
 	
 }

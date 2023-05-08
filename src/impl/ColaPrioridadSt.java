@@ -10,20 +10,22 @@ public class ColaPrioridadSt implements ColaPrioridadTDA {
 	}
 	private Estructura[] arr;
 	private int indice;
+	private int suma;
 	
 
 	@Override
 	public void inicializarColaPrioridad() {
 		arr = new Estructura[100];
-
+		indice = 0;
+		suma = 0;
 	}
 
 	@Override
 	public void acolarPrioridad(int val, int prio) {
 		int i = indice;
-		while (i > 0 && prio <= arr[i -1].prioridad) {
+		while (i > 0 && prio <= arr[i - 1].prioridad) {
 			arr[i] = new Estructura();
-			arr[i].valor = arr[i -1].valor;
+			arr[i].valor = arr[i - 1].valor;
 			arr[i].prioridad = arr[i - 1].prioridad;
 			i--;
 		}
@@ -31,10 +33,12 @@ public class ColaPrioridadSt implements ColaPrioridadTDA {
 		arr[i].valor = val;
 		arr[i].prioridad = prio;
 		indice++;
-		}
-
+		suma += prio;
+	}
+	
 	@Override
 	public void desacolar() {
+		suma -= arr[indice -1].prioridad;
 		arr[indice - 1] = null;
 		indice--;
 	}
@@ -54,4 +58,9 @@ public class ColaPrioridadSt implements ColaPrioridadTDA {
 		return indice == 0;
 	}
 
+	@Override
+	public int sumaPrioridades() {
+		return suma;
+	}
+	
 }
